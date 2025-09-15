@@ -1,18 +1,17 @@
-// pets.dart
-// this is the base class for all pets
 class Pets {
-  String name;
-  String rarity;
-  int _level;
-  int _age;
-  double _hunger; // hunger is 0–100 (0 = starving, 100 = full)
+  String name;      // pet's name
+  String rarity;    // how rare the pet is (Common, Rare, etc.)
+  int _level;       // private field, pet's level
+  int _age;         // private field, pet's age
+  double _hunger;   // private field, hunger (0-100, 100 = full)
 
+  // constructor, used to make a pet object
   Pets({
     required this.name,
     required this.rarity,
-    int level = 1,
-    int age = 0,
-    double hunger = 100,
+    int level = 1,   // default is level 1
+    int age = 0,     // default age is 0
+    double hunger = 100, // default hunger is full (100)
   })  : _level = level,
         _age = age,
         _hunger = hunger;
@@ -40,78 +39,24 @@ class Pets {
     _hunger = value;
   }
 
-  // method: feed the pet
+  // method to feed the pet
   void feed(double food) {
+    if (food <= 0) {
+      print("$name cannot eat zero or negative food.");
+      return;
+    }
     _hunger += food;
-    if (_hunger > 100) _hunger = 100;
+    if (_hunger > 100) _hunger = 100; // cap hunger to max 100
     print("$name was fed. Hunger level: $_hunger");
   }
 
-  // method: pet gets older
+  // method to increase the pet's age
   void growOlder() {
     _age++;
     print("$name has grown older. Age is now $_age.");
   }
 
-  // method: show pet info as a string
+  // method that shows pet details
   String info() =>
       "$name (Rarity: $rarity, Level: $_level, Hunger: $_hunger, Age: $_age)";
-}
-
-// ---------------- derived classes ----------------
-
-// dog is a pet but has its own extra behavior
-class Dog extends Pets {
-  String breed;
-
-  Dog({
-    required String name,
-    required String rarity,
-    required this.breed,
-    int level = 1,
-    int age = 0,
-    double hunger = 100,
-  }) : super(name: name, rarity: rarity, level: level, age: age, hunger: hunger);
-
-  // unique method for dogs
-  void dig() {
-    print("$name the $breed digs up a seed from the garden!");
-  }
-
-  // override feed so dogs wag tail when eating
-  @override
-  void feed(double food) {
-    print("Dog wags tail happily while eating.");
-    super.feed(food);
-  }
-}
-
-// bunny is a pet with a carrot munching ability
-class Bunny extends Pets {
-  Bunny({
-    required String name,
-    required String rarity,
-    int level = 1,
-    int age = 0,
-    double hunger = 100,
-  }) : super(name: name, rarity: rarity, level: level, age: age, hunger: hunger);
-
-  void munchCarrot() {
-    print("$name munches a carrot and boosts carrot value by x2.0!");
-  }
-}
-
-// bee is a pet with a buzzing ability
-class Bee extends Pets {
-  Bee({
-    required String name,
-    required String rarity,
-    int level = 1,
-    int age = 0,
-    double hunger = 100,
-  }) : super(name: name, rarity: rarity, level: level, age: age, hunger: hunger);
-
-  void buzzAround() {
-    print("$name buzzes around and increases crop growth by 12.0%!");
-  }
 }
