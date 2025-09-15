@@ -44,21 +44,6 @@ dart run lib/main.dart
 # Sample Output
 
 --- Base Pet ---
-Generic Pet (Rarity: Common, Level: 1, Hunger: 80.0, Age: 1)
-Generic Pet was fed. Hunger level: 90.0
-Generic Pet has grown older. Age is now 2.
-
---- Dog (Derived) ---
-Buddy (Rarity: Common, Level: 2, Hunger: 70.0, Age: 3)
-Buddy the Golden Lab digs up a seed from the garden!
-Dog wags tail happily while eating.
-Buddy was fed. Hunger level: 90.0
-
---- Bunny (Derived) ---
-Flopsy (Rarity: Uncommon, Level: 1, Hunger: 60.0, Age: 2)
-Flopsy munches a carrot and boosts carrot value by x2.0!
-
---- Bee (Derived) ---
-Buzz (Rarity: Rare, Level: 3, Hunger: 90.0, Age: 1)
-Buzz buzzes around and increases crop growth by 12.0%!
-
+Paopao (Rarity: Common, Level: 1, Hunger: 80.0, Age: 1)
+Paopao was fed. Hunger level: 90.0
+Paopao has grown older. Age is now 2.
