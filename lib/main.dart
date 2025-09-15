@@ -1,20 +1,23 @@
-import 'package:flutter/material.dart';
+import 'pets.dart';
 
 void main() {
-  runApp(const MainApp());
-}
+  print("--- Base Pet ---");
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+  // create a generic pet object
+  var genericPet = Pets(
+    name: "Paopao",
+    rarity: "Common",
+    level: 1,
+    age: 1,
+    hunger: 80,
+  );
 
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
-    );
-  }
+  // print the info of the pet
+  print(genericPet.info());
+
+  // feed the pet and see hunger go up
+  genericPet.feed(10);
+
+  // make the pet grow older
+  genericPet.growOlder();
 }
