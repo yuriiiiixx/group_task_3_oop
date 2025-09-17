@@ -34,4 +34,10 @@ void main() {
   print(buddy.info());
   buddy.dig();
   buddy.feed(20);
+
+// --- Bunny ---
+  print("\n--- Bunny (Derived) ---");
+  var flopsy = Bunny(name: "Flopsy", rarity: "Uncommon", favoriteFood: "Lettuce", level: 1, age: 2, hunger: 60);
+  print(flopsy.info());
+  flopsy.munchCarrot();  // Bunny’s own method
 }
