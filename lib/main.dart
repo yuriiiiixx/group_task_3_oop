@@ -1,5 +1,6 @@
 import 'pets.dart';
 import 'dog.dart';
+import 'bee.dart';
 
 void main() {
   print("--- Base Pet ---");
@@ -22,16 +23,10 @@ void main() {
   // make the pet grow older
   genericPet.growOlder();
 
-  print("\n--- Dog (Derived) ---");
-  var buddy = Dog(
-    name: "Buddy",
-    rarity: "Common",
-    breed: "Golden Lab",
-    level: 2,
-    age: 3,
-    hunger: 70,
-  );
-  print(buddy.info());
-  buddy.dig();
-  buddy.feed(20);
+  // --- Bee (Derived) ---
+  print("\n--- Bee (Derived) ---");
+  var buzz =
+      Bee(name: "Buzz", rarity: "Uncommon", level: 3, age: 1, hunger: 90);
+  print(buzz.info());
+  buzz.buzzAround(); // unique Bee method
 }
