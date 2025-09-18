@@ -1,5 +1,7 @@
 import 'pets.dart';
 import 'dog.dart';
+import 'bee.dart';
+import 'bunny.dart';
 
 void main() {
   print("--- Base Pet ---");
@@ -34,4 +36,17 @@ void main() {
   print(buddy.info());
   buddy.dig();
   buddy.feed(20);
+
+// --- Bunny ---
+  print("\n--- Bunny (Derived) ---");
+  var flopsy = Bunny(name: "Flopsy", rarity: "Uncommon", favoriteFood: "Lettuce", level: 1, age: 2, hunger: 60);
+  print(flopsy.info());
+  flopsy.munchCarrot();  // Bunny’s own method
+
+  // --- Bee (Derived) ---
+  print("\n--- Bee (Derived) ---");
+  var buzz =
+      Bee(name: "Buzz", rarity: "Uncommon", level: 3, age: 1, hunger: 90);
+  print(buzz.info());
+  buzz.buzzAround(); // unique Bee method
 }
