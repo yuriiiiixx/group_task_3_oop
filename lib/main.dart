@@ -1,4 +1,5 @@
 import 'pets.dart';
+import 'dog.dart';
 
 void main() {
   print("--- Base Pet ---");
@@ -20,4 +21,17 @@ void main() {
 
   // make the pet grow older
   genericPet.growOlder();
+
+  print("\n--- Dog (Derived) ---");
+  var buddy = Dog(
+    name: "Buddy",
+    rarity: "Common",
+    breed: "Golden Lab",
+    level: 2,
+    age: 3,
+    hunger: 70,
+  );
+  print(buddy.info());
+  buddy.dig();
+  buddy.feed(20);
 }
